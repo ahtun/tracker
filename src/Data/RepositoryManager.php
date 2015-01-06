@@ -365,7 +365,8 @@ class RepositoryManager implements RepositoryManagerInterface {
 				$domain = array_pop($parts) . "." . $domain;
 			}
 
-			$domain_id = $this->getDomainId($domain);
+			//$domain_id = $this->getDomainId($domain);
+			$domain_id = $this->getDomainId($url['host']);
 
 			return $this->refererRepository->findOrCreate(
 				array(
